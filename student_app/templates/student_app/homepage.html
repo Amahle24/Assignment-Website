@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Time management website</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'student_app\css\homepage.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'student_app/favicon.ico' %}">
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <h2 class="logo">TaskFlow</h2>
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <button class="bt"><a href="{% url 'secpage' %}">LOGIN</a></button>
+                        <button class="bt"><a href="{% url 'secpage' %}">REGISTER</a></button>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>Time management & <br><span>wellness</span> <br> check-in</h1>
+                <p class="para"> This website is designed for students who want to manage
+                    <br> their time effectively while prioritizing their<br> mental well-being.
+                     It supports them in <br> achieving their goals and maintaining a well-organized 
+                     <br>schedule. Would you like to join us?
+                </p>
+                <button class="cn"><a href="#">JOIN US</a></button>
+
+                <div class="form">
+                    <h2>Login here</h2>
+                    <input type="email" name="email" placeholder="Enter your email">
+                    <input type="password" name="" placeholder="enter your password">
+                    <button class="btn2"><a href="{% url 'secpage' %}">LOGIN</a></button>
+
+                    <p class="link">Don't have an account?<br>
+                    <a href="#">Sign up here</a></p>
+                </div>
+            
+            </div>
+        </div>
+    </body>
+</html>

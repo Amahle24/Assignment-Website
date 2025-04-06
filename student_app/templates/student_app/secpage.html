@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'student_app/css/secpage.css' %}">
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/common/main.min.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.js'></script>
+
+<style>
+    .parent-container{
+        display: flex;
+        gap: 20px;
+        max-width: 10000px;
+        margin: auto;
+        justify-content: center;
+    }
+    .container {
+        max-width: 500px;
+        margin-right: 10px;
+        margin: 35px;
+        background-color: rgb(245, 245, 245);
+        padding: 1px 20px 20px 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px black;
+    }
+
+    .container2 {
+        margin-left: 10px;
+        max-width: 500px;
+        margin: 35px;
+        background-color: whitesmoke;
+        padding: 1px 20px 20px 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px black;
+    }
+    
+    label, input, button {
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+    
+    input {
+        width: 100%;
+        margin-top: 6px;
+    }
+    
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    
+    th, td {
+        padding: 5px;
+        border: 1px solid wheat;
+        text-align: center;
+    }
+    
+    th {
+        background: green;
+        color: wheat;
+    }
+    button {
+        background: green;
+        color: wheat;
+        padding: 5px;
+        border: none;
+    }
+    
+    button:hover {
+        background-color: black;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">TaskFlow</h2>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="#">DASHBOARD</a></li>
+                <li><a href="{% url 'wellness' %}">CHAT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+
+        
+
+        <div class="lmenu">
+
+        <a href="#" class="me-3">
+            <img src="{% static 'student_app/css/notification-icon.png' %}" alt="Notifications" width="25">
+        </a>
+
+        <a href="{% url 'calender' %}" class="me-3">
+            <img src="{% static 'student_app/css/calender-icon.png' %}" alt="Calendar" width="25">
+        </a>
+
+        <a href="#" class="me-3">
+            <img src="{% static 'student_app/css/search-icon.png' %}" alt="Search" width="25">
+        </a>
+
+
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{% static 'student_app/css/profile-icon.png' %}" alt="Profile" width="30" class="rounded-circle">
+                Amahle Mag
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+        </div>
+
+        </div>
+    </div>
+<div class="parent-container">
+    <div class="container">
+        <h2 style="text-align: center;">Add Event</h2>
+        <label for="">Title</label>
+        <input type="text" id="title"/>
+        <label for="">Description</label>
+        <input type="text" id="description"/>
+        <label for="">Date</label>
+        <input type="date" id="date"/>
+        <label for="">Time</label>
+        <input type="time" id="time"/>
+
+        <button style="width: 100%;" onclick="scheduleReminder();">Schedule</button>
+    </div>
+    <div class="container2">
+        <h2 style="text-align: center;">upcoming event</h2>
+            <table border="1">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date & Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="reminderTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<a href="{% url 'wellness' %}" class="me-4">
+    <img src="{% static 'student_app/css/robot-assistant.png' %}" alt="Search" width="50">
+</a>
+
+<audio id="notificationsound" src="{% static 'student_app/css/sound.mp3' %}" preload="auto"></audio>
+</body>
+
+
+<script src="{% static 'student_app/css/calender.js' %}"></script> 
+</html>

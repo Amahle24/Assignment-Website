@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.6) 50%), url("../css/home.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+
+.navbar {
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+
+.logo{
+    color: orange;
+    font-size: 35px;
+    font-family:Arial ;
+    float: left;
+    padding-top: 10px;
+}
+
+.menu {
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 15px;
+    margin-top: 27px;
+    font-size: 16px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: wheat;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: green;
+}
+
+.lmenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    padding: 10px 20px;
+    background-color: transparent; 
+    padding: 10px 20px;
+}
+
+.dropdown {
+    position: relative;
+    margin-right: 20px;
+}
+
+
+.dropdown .dropdown-toggle{
+    font-size: 1rem;
+    color: wheat;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+.dropdown-toggle img{
+    margin-right: 8px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown-toggle:hover img{
+    transform: scale(1.1);
+}
+
+.dropdown-toggle:hover{
+    color: green;
+}
+
+
+.dropdown-menu{
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 0;
+    margin-right: 40px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0%;
+    list-style: none;
+    margin-top: 5px;
+    z-index: 1000;
+}
+
+.me-3{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.dropdown-item{
+    display: block;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    color: #333;
+    transition:  0.3s ease;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+img {
+    transition: 0.3s;
+
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    width: 440px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgb(8, 206, 8) 0px 7px 29px 0px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #edf1f3;
+}
+
+.chat {
+    height: 380px;
+    overflow-y: scroll;
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid rgb(39, 177, 11);
+    border-radius: 5px;
+    background: linear-gradient(to top, rgba(238, 236, 234, 0.438)50%, rgba(238, 236, 234, 0.438)50%);
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.user {
+    justify-content: flex-end;
+}
+
+.bot {
+    justify-content: flex-start;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.user .avatar {
+    order: 2;
+    background: url("man.png");
+    background-size: cover;
+}
+
+.bot .avatar {
+    order: 1;
+    background: url("robot.png");
+    background-size: cover;
+}
+
+.text {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.user .text {
+    background: #38eb65;
+}
+
+.bot .text {
+    background: #303130;
+}
+
+.input {
+    position: relative;
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #cbcbce;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+}
+
+.input:focus {
+    border-color: #8296d0;
+    color: #1e1f1f;
+}
+
+.button {
+    position: absolute;
+    width: 100px;
+    border: none;
+    padding: 1px;
+    background: #28b60c;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: .01rem;
+    margin-left: -4.1rem;
+    outline: none;
+}
+
+.button i {
+    font-size: 3rem;
+}
+
+.button:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat::-webkit-scrollbar{
+    width: 10px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: #bcbdc0;
+    border-radius: 10px;
+}
